@@ -9,7 +9,7 @@ const Jewelery = new Schema(
         description:{type:String, required: true},
         stock: {type:Number, required: true},
         category: {type:String, required: true},
-        image: {type:URL, required: true},
+        image: {type:String, required: true},
         brand: { type: Schema.Types.ObjectId, ref: 'Brand' },
       },
   { timestamps: true }

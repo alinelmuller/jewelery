@@ -1,25 +1,25 @@
 const db = require("../db");
-const Jewleries = require("../models/jewelery");
+const Jeweleries = require("../models/jewelery");
 const Brand = require("../models/brand");
 
 // Connect to the database
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
 const main = async () => {
-  const tiffanyJewelery = await Jewelery.findOne({ name: "Tiffany & Co." });
-  const cartierJewelery = await Jewelery.findOne({ name: "Cartier" });
-  const chopardJewelery = await Jewelery.findOne({ name: "Chopard" });
-  const bvlgariJewelery = await Jewelery.findOne({ name: "Bvlgari" });
-  const harryWinstonJewelery = await Jewelery.findOne({
+  const tiffanyBrand = await Brand.findOne({ name: "Tiffany & Co." });
+  const cartierBrand = await Brand.findOne({ name: "Cartier" });
+  const chopardBrand = await Brand.findOne({ name: "Chopard" });
+  const bvlgariBrand = await Brand.findOne({ name: "Bvlgari" });
+  const harryWinstonBrand = await Brand.findOne({
     name: "Harry Winston",
   });
-  const vancleefJewelery = await Jewelery.findOne({
+  const vancleefBrand = await Brand.findOne({
     name: "Van Cleef & Arpels",
   });
-  const davidYurmanJewelery = await Jewelery.findOne({ name: "David Yurman" });
-  const piagetJewelery = await Jewelery.findOne({ name: "Piaget" });
-  const graffJewelery = await Jewelery.findOne({ name: "Graff" });
-  const mikimotoJewelery = await Jewelery.findOne({ name: "Mikimoto" });
+  const davidYurmanBrand = await Brand.findOne({ name: "David Yurman" });
+  const piagetBrand = await Brand.findOne({ name: "Piaget" });
+  const graffBrand = await Brand.findOne({ name: "Graff" });
+  const mikimotoBrand = await Brand.findOne({ name: "Mikimoto" });
 
   const jeweleries = [
     //Tiffany
@@ -31,8 +31,9 @@ const main = async () => {
         "A radiant engagement ring with a stunning diamond centerpiece.",
       stock: 5,
       category: "Ring",
-      image: "https://example.com/tiffany_soleste_ring.jpg",
-      brand: tiffanyJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: tiffanyBrand._id,
     },
     {
       name: "Tiffany T Wire Bracelet",
@@ -41,8 +42,9 @@ const main = async () => {
       description: "Minimalist bracelet featuring the iconic Tiffany T design.",
       stock: 10,
       category: "Bracelet",
-      image: "https://example.com/tiffany_t_wire_bracelet.jpg",
-      brand: tiffanyJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: tiffanyBrand._id,
     },
     {
       name: "Tiffany Victoria Earrings",
@@ -52,8 +54,9 @@ const main = async () => {
         "Floral-inspired earrings with a stunning diamond arrangement.",
       stock: 3,
       category: "Earrings",
-      image: "https://example.com/tiffany_victoria_earrings.jpg",
-      brand: tiffanyJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: tiffanyBrand._id,
     },
     {
       name: "Tiffany Infinity Pendant",
@@ -63,8 +66,9 @@ const main = async () => {
         "A symbol of endless possibilities, perfect for everyday wear.",
       stock: 8,
       category: "Necklace",
-      image: "https://example.com/tiffany_infinity_pendant.jpg",
-      brand: tiffanyJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: tiffanyBrand._id,
     },
     {
       name: "Tiffany Key Charm",
@@ -73,8 +77,9 @@ const main = async () => {
       description: "Intricate key charm symbolizing knowledge and inspiration.",
       stock: 12,
       category: "Charm",
-      image: "https://example.com/tiffany_key_charm.jpg",
-      brand: tiffanyJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: tiffanyBrand._id,
     },
 
     // Cartier
@@ -85,8 +90,9 @@ const main = async () => {
       description: "Iconic bracelet that symbolizes eternal love.",
       stock: 7,
       category: "Bracelet",
-      image: "https://example.com/cartier_love_bracelet.jpg",
-      brand: cartierJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: cartierBrand._id,
     },
     {
       name: "Cartier Panthère Ring",
@@ -95,8 +101,9 @@ const main = async () => {
       description: "Striking panther-inspired ring with emerald eyes.",
       stock: 4,
       category: "Ring",
-      image: "https://example.com/cartier_panthere_ring.jpg",
-      brand: cartierJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: cartierBrand._id,
     },
     {
       name: "Cartier Juste un Clou Necklace",
@@ -105,8 +112,9 @@ const main = async () => {
       description: "Elegant necklace featuring a unique nail design.",
       stock: 6,
       category: "Necklace",
-      image: "https://example.com/cartier_juste_un_clou_necklace.jpg",
-      brand: cartierJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: cartierBrand._id,
     },
     {
       name: "Cartier Clash Earrings",
@@ -115,8 +123,9 @@ const main = async () => {
       description: "Edgy earrings that blend tradition with modernity.",
       stock: 5,
       category: "Earrings",
-      image: "https://example.com/cartier_clash_earrings.jpg",
-      brand: cartierJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: cartierBrand._id,
     },
     {
       name: "Cartier Santos Watch",
@@ -125,8 +134,9 @@ const main = async () => {
       description: "Timeless luxury watch with a sleek design.",
       stock: 2,
       category: "Watch",
-      image: "https://example.com/cartier_santos_watch.jpg",
-      brand: cartierJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: cartierBrand._id,
     },
 
     // Chopard
@@ -137,8 +147,9 @@ const main = async () => {
       description: "Delicate bracelet with heart-shaped elements and diamonds.",
       stock: 10,
       category: "Bracelet",
-      image: "https://example.com/chopard_happy_hearts_bracelet.jpg",
-      brand: chopardJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: chopardBrand._id,
     },
     {
       name: "Chopard Imperiale Ring",
@@ -147,8 +158,9 @@ const main = async () => {
       description: "Elegant ring with a purple amethyst centerpiece.",
       stock: 3,
       category: "Ring",
-      image: "https://example.com/chopard_imperiale_ring.jpg",
-      brand: chopardJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: chopardBrand._id,
     },
     {
       name: "Chopard L'Heure Du Diamant Necklace",
@@ -158,8 +170,9 @@ const main = async () => {
         "Luxurious necklace featuring a dazzling diamond arrangement.",
       stock: 1,
       category: "Necklace",
-      image: "https://example.com/chopard_diamant_necklace.jpg",
-      brand: chopardJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: chopardBrand._id,
     },
     {
       name: "Chopard Ice Cube Earrings",
@@ -168,8 +181,9 @@ const main = async () => {
       description: "Modern earrings with a geometric design.",
       stock: 4,
       category: "Earrings",
-      image: "https://example.com/chopard_ice_cube_earrings.jpg",
-      brand: chopardJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: chopardBrand._id,
     },
     {
       name: "Chopard Happy Diamonds Watch",
@@ -178,8 +192,9 @@ const main = async () => {
       description: "Luxury watch with dancing diamonds on the dial.",
       stock: 2,
       category: "Watch",
-      image: "https://example.com/chopard_happy_diamonds_watch.jpg",
-      brand: chopardJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: chopardBrand._id,
     },
 
     // Bvlgari
@@ -191,8 +206,9 @@ const main = async () => {
         "An iconic bracelet inspired by the snake, symbolizing strength.",
       stock: 3,
       category: "Bracelet",
-      image: "https://example.com/bvlgari_serpenti_bracelet.jpg",
-      brand: bvlgariJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: bvlgariBrand._id,
     },
     {
       name: "Bvlgari B.Zero1 Ring",
@@ -201,8 +217,9 @@ const main = async () => {
       description: "Bold ring inspired by the grandeur of Rome's Colosseum.",
       stock: 6,
       category: "Ring",
-      image: "https://example.com/bvlgari_b_zero1_ring.jpg",
-      brand: bvlgariJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: bvlgariBrand._id,
     },
     {
       name: "Bvlgari Divas' Dream Necklace",
@@ -211,8 +228,9 @@ const main = async () => {
       description: "Elegant necklace inspired by Italian feminine beauty.",
       stock: 2,
       category: "Necklace",
-      image: "https://example.com/bvlgari_divas_necklace.jpg",
-      brand: bvlgariJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: bvlgariBrand._id,
     },
     {
       name: "Bvlgari Fiorever Earrings",
@@ -221,8 +239,9 @@ const main = async () => {
       description: "Earrings with floral motifs and sparkling diamonds.",
       stock: 3,
       category: "Earrings",
-      image: "https://example.com/bvlgari_fiorever_earrings.jpg",
-      brand: bvlgariJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: bvlgariBrand._id,
     },
     {
       name: "Bvlgari Octo Watch",
@@ -232,8 +251,9 @@ const main = async () => {
         "Masterful craftsmanship combined with iconic Italian design.",
       stock: 1,
       category: "Watch",
-      image: "https://example.com/bvlgari_octo_watch.jpg",
-      brand: bvlgariJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: bvlgariBrand._id,
     },
 
     // Harry Winston
@@ -245,8 +265,9 @@ const main = async () => {
         "Timeless diamond cluster earrings with exceptional brilliance.",
       stock: 2,
       category: "Earrings",
-      image: "https://example.com/harry_winston_cluster_earrings.jpg",
-      brand: harryWinstonJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: harryWinstonBrand._id,
     },
     {
       name: "Harry Winston Solitaire Ring",
@@ -255,8 +276,9 @@ const main = async () => {
       description: "A classic solitaire ring showcasing a flawless diamond.",
       stock: 1,
       category: "Ring",
-      image: "https://example.com/harry_winston_solitaire_ring.jpg",
-      brand: harryWinstonJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: harryWinstonBrand._id,
     },
     {
       name: "Harry Winston Secret Watch",
@@ -266,8 +288,9 @@ const main = async () => {
         "An exquisite secret watch hidden beneath a diamond-encrusted design.",
       stock: 2,
       category: "Watch",
-      image: "https://example.com/harry_winston_secret_watch.jpg",
-      brand: harryWinstonJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: harryWinstonBrand._id,
     },
     {
       name: "Harry Winston Emerald Necklace",
@@ -277,8 +300,9 @@ const main = async () => {
         "A breathtaking necklace featuring an emerald centerpiece surrounded by diamonds.",
       stock: 1,
       category: "Necklace",
-      image: "https://example.com/harry_winston_emerald_necklace.jpg",
-      brand: harryWinstonJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: harryWinstonBrand._id,
     },
     {
       name: "Harry Winston Diamond Loop Bracelet",
@@ -288,8 +312,9 @@ const main = async () => {
         "An intricate bracelet with stunning diamond loops creating a glamorous look.",
       stock: 1,
       category: "Bracelet",
-      image: "https://example.com/harry_winston_diamond_loop_bracelet.jpg",
-      brand: harryWinstonJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: harryWinstonBrand._id,
     },
     // Van Cleef & Arpels
     {
@@ -300,8 +325,9 @@ const main = async () => {
         "A timeless bracelet featuring the iconic Alhambra clover design.",
       stock: 7,
       category: "Bracelet",
-      image: "https://example.com/van_cleef_alhambra_bracelet.jpg",
-      brand: vancleefJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: vancleefBrand._id,
     },
     {
       name: "Van Cleef & Arpels Frivole Ring",
@@ -311,8 +337,9 @@ const main = async () => {
         "A floral-inspired ring with delicate diamonds and gold petals.",
       stock: 4,
       category: "Ring",
-      image: "https://example.com/van_cleef_frivole_ring.jpg",
-      brand: vancleefJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: vancleefBrand._id,
     },
     {
       name: "Van Cleef & Arpels Vintage Alhambra Necklace",
@@ -322,8 +349,9 @@ const main = async () => {
         "A stunning necklace with a mother-of-pearl four-leaf clover pendant.",
       stock: 5,
       category: "Necklace",
-      image: "https://example.com/van_cleef_alhambra_necklace.jpg",
-      brand: vancleefJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: vancleefBrand._id,
     },
     {
       name: "Van Cleef & Arpels Perlée Earrings",
@@ -333,8 +361,9 @@ const main = async () => {
         "Elegant earrings with fine gold beads surrounding the design.",
       stock: 6,
       category: "Earrings",
-      image: "https://example.com/van_cleef_perlee_earrings.jpg",
-      brand: vancleefJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: vancleefBrand._id,
     },
     {
       name: "Van Cleef & Arpels Snowflake Watch",
@@ -344,8 +373,9 @@ const main = async () => {
         "A luxurious watch inspired by the beauty of snowflakes, featuring diamonds on a platinum band.",
       stock: 1,
       category: "Watch",
-      image: "https://example.com/van_cleef_snowflake_watch.jpg",
-      brand: vancleefJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: vancleefBrand._id,
     },
     //David
     {
@@ -356,8 +386,9 @@ const main = async () => {
         "A signature bracelet featuring twisted sterling silver cable design with gold accents.",
       stock: 6,
       category: "Bracelet",
-      image: "https://example.com/david_yurman_cable_bracelet.jpg",
-      brand: davidYurmanJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: davidYurmanBrand._id,
     },
     {
       name: "David Yurman Albion Ring",
@@ -367,8 +398,9 @@ const main = async () => {
         "A striking ring with a cushion-cut morganite framed by pavé diamonds.",
       stock: 4,
       category: "Ring",
-      image: "https://example.com/david_yurman_albion_ring.jpg",
-      brand: davidYurmanJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: davidYurmanBrand._id,
     },
     {
       name: "David Yurman Renaissance Necklace",
@@ -378,8 +410,9 @@ const main = async () => {
         "A vibrant necklace featuring an array of colorful gemstones.",
       stock: 3,
       category: "Necklace",
-      image: "https://example.com/david_yurman_renaissance_necklace.jpg",
-      brand: davidYurmanJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: davidYurmanBrand._id,
     },
     {
       name: "David Yurman Chatelaine Earrings",
@@ -389,8 +422,9 @@ const main = async () => {
         "Delicate drop earrings featuring round blue topaz set in sterling silver.",
       stock: 5,
       category: "Earrings",
-      image: "https://example.com/david_yurman_chatelaine_earrings.jpg",
-      brand: davidYurmanJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: davidYurmanBrand._id,
     },
     {
       name: "David Yurman Thoroughbred Watch",
@@ -400,8 +434,9 @@ const main = async () => {
         "A luxury watch featuring a sleek design with a diamond-encrusted bezel.",
       stock: 2,
       category: "Watch",
-      image: "https://example.com/david_yurman_thoroughbred_watch.jpg",
-      brand: davidYurmanJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: davidYurmanBrand._id,
     },
 
     // Piaget
@@ -412,8 +447,9 @@ const main = async () => {
       description: "A refined bracelet featuring rotating diamond bands.",
       stock: 6,
       category: "Bracelet",
-      image: "https://example.com/piaget_possession_bracelet.jpg",
-      brand: piagetJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: piagetBrand._id,
     },
     {
       name: "Piaget Rose Ring",
@@ -423,8 +459,9 @@ const main = async () => {
         "A delicate ring inspired by the beauty of roses, featuring a diamond centerpiece.",
       stock: 5,
       category: "Ring",
-      image: "https://example.com/piaget_rose_ring.jpg",
-      brand: piagetJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: piagetBrand._id,
     },
     {
       name: "Piaget Sunlight Necklace",
@@ -434,8 +471,9 @@ const main = async () => {
         "A radiant necklace capturing the brilliance of sunlight with diamonds.",
       stock: 3,
       category: "Necklace",
-      image: "https://example.com/piaget_sunlight_necklace.jpg",
-      brand: piagetJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: piagetBrand._id,
     },
     {
       name: "Piaget Limelight Gala Earrings",
@@ -445,8 +483,9 @@ const main = async () => {
         "Exquisite earrings that bring together glamour and timeless elegance.",
       stock: 4,
       category: "Earrings",
-      image: "https://example.com/piaget_limelight_earrings.jpg",
-      brand: piagetJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: piagetBrand._id,
     },
     {
       name: "Piaget Polo Watch",
@@ -456,8 +495,9 @@ const main = async () => {
         "A sporty yet elegant watch combining luxury with a contemporary twist.",
       stock: 2,
       category: "Watch",
-      image: "https://example.com/piaget_polo_watch.jpg",
-      brand: piagetJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: piagetBrand._id,
     },
     //Graff
     {
@@ -468,8 +508,9 @@ const main = async () => {
         "A delicate necklace featuring Graff’s signature butterfly silhouette adorned with diamonds.",
       stock: 2,
       category: "Necklace",
-      image: "https://example.com/graff_butterfly_necklace.jpg",
-      brand: graffJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: graffBrand._id,
     },
     {
       name: "Graff Lesedi La Rona Ring",
@@ -479,8 +520,9 @@ const main = async () => {
         "An extraordinary diamond ring from the Lesedi La Rona collection featuring one of the world's rarest diamonds.",
       stock: 1,
       category: "Ring",
-      image: "https://example.com/graff_lesedi_ring.jpg",
-      brand: graffJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: graffBrand._id,
     },
     {
       name: "Graff Diamond Halo Earrings",
@@ -490,8 +532,9 @@ const main = async () => {
         "Exquisite diamond halo earrings that capture light from every angle.",
       stock: 3,
       category: "Earrings",
-      image: "https://example.com/graff_halo_earrings.jpg",
-      brand: graffJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: graffBrand._id,
     },
     //Graff
     {
@@ -502,8 +545,9 @@ const main = async () => {
         "A luxurious timepiece encrusted with diamonds and a sleek design that defines elegance.",
       stock: 1,
       category: "Watch",
-      image: "https://example.com/graff_iconic_watch.jpg",
-      brand: graffJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: graffBrand._id,
     },
     {
       name: "Graff Emerald and Diamond Bracelet",
@@ -513,8 +557,9 @@ const main = async () => {
         "An opulent bracelet featuring a mix of emeralds and diamonds in Graff's signature style.",
       stock: 1,
       category: "Bracelet",
-      image: "https://example.com/graff_emerald_bracelet.jpg",
-      brand: graffJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: graffBrand._id,
     },
     //Mikimoto
     {
@@ -524,8 +569,9 @@ const main = async () => {
       description: "Timeless pearl stud earrings set in 18k white gold.",
       stock: 6,
       category: "Earrings",
-      image: "https://example.com/mikimoto_pearl_stud_earrings.jpg",
-      brand: mikimotoJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: mikimotoBrand._id,
     },
     {
       name: "Mikimoto Diamond & Pearl Ring",
@@ -535,8 +581,9 @@ const main = async () => {
         "A sophisticated ring featuring a pearl centerpiece surrounded by diamonds.",
       stock: 4,
       category: "Ring",
-      image: "https://example.com/mikimoto_diamond_pearl_ring.jpg",
-      brand: mikimotoJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: mikimotoBrand._id,
     },
     {
       name: "Mikimoto Pearl Drop Earrings",
@@ -545,8 +592,9 @@ const main = async () => {
       description: "Elegant drop earrings featuring lustrous South Sea pearls.",
       stock: 2,
       category: "Earrings",
-      image: "https://example.com/mikimoto_pearl_drop_earrings.jpg",
-      brand: mikimotoJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: mikimotoBrand._id,
     },
     {
       name: "Mikimoto Pearl Blossom Watch",
@@ -556,8 +604,9 @@ const main = async () => {
         "A luxurious watch adorned with diamonds and pearls for a unique floral design.",
       stock: 1,
       category: "Watch",
-      image: "https://example.com/mikimoto_pearl_watch.jpg",
-      brand: mikimotoJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: mikimotoBrand._id,
     },
     {
       name: "Mikimoto Pearl and Diamond Bracelet",
@@ -567,12 +616,13 @@ const main = async () => {
         "A stunning bracelet featuring a combination of Akoya pearls and diamonds set in 18k white gold.",
       stock: 3,
       category: "Bracelet",
-      image: "https://example.com/mikimoto_pearl_diamond_bracelet.jpg",
-      brand: mikimotoJewelery._id,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png",
+      brand: mikimotoBrand._id,
     },
   ];
 
-  await Jewelery.insertMany(jeweleries);
+  await Jeweleries.insertMany(jeweleries);
   console.log("Created some jeweleries!");
 };
 const run = async () => {
