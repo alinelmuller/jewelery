@@ -1,0 +1,1 @@
+const somethingHere = require(`../models`);
