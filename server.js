@@ -6,7 +6,7 @@ const jewelryController = require("./controllers/jewelryController");
 // Need to add cors for script.js to work - Pedro
 const cors = require("cors");
 
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3004;
 const app = express();
 
 const bodyParser = require("body-parser");

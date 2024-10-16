@@ -1,53 +1,62 @@
 // /*-----------------{Global Variables}-----------------*/
-const categoryTitle = document.querySelector(`#catergory-title`);
+const earingsPriceTag = document.querySelector(`.earing-price`);
+const earingsDescription = document.querySelector(`.earing-description`);
+const braceletsPriceTag = document.querySelector(`.bracelet-price`);
+const braceletsDescription = document.querySelector(`.bracelet-description`);
+const ringsPriceTag = document.querySelector(`.ring-price`);
+const ringsDescription = document.querySelector(`.ring-description`);
+const necklacesPriceTag = document.querySelector(`.necklace-price`);
+const necklacesDescription = document.querySelector(`.necklace-description`);
 
-const productImage = document.querySelector(`#product-image`);
-const brandImage = document.querySelector(`#brand-image`);
+const itemContainer = document.querySelectorAll(`.card`);
 
-const productPriceTag = document.querySelector(`#price-of-product`);
-const productName = document.querySelector(`#product-name`);
-const productDescription = document.querySelector(`#product-description`);
-
-// const brandOfProduct = document.querySelector(`#product-brand`);
-// const originOfBrand = document.querySelector(`#brand-origin`);
 // /*--------------------{Functions}---------------------*/
 async function fetchAllJewelry() {
   try {
-    const res = await axios.get(`http://localhost:3002/jeweleries`);
+    const res = await axios.get(`http://localhost:3004/jeweleries`);
     const apiLibrary = res.data;
-    console.log(apiLibrary);
 
-    apiLibrary.forEach((api) => {
-      categoryTitle.textContent = api.category;
+    const container = document.querySelector(".container");
 
-      productImage.src = api.image;
-      productImage.alt = `${api.name} image`;
+    products.forEach((product) => {
+      const card = document.createElement("div");
+      card.classList.add("item", "card");
 
-      productName.textContent = api.name;
-      productPriceTag.textContent = `$${api.price}`;
-      productDescription.textContent = api.description;
+      const img = document.createElement("img");
+      img.src = product.image;
+      img.alt = "Product Image";
+      img.classList.add("card-image");
 
-      // async function fetchAllBrands() {
-      //   try {
-      //     const brandRes = await axios.get(
-      //       `http://localhost:3002/brands/${api.brand}`
-      //     );
-      //     const brandData = brandRes.data;
+      const cardInfo = document.createElement("div");
+      cardInfo.classList.add("card-info");
 
-      //     brandOfProduct.textContent = brandData.name;
-      //     originOfBrand.textContent = brandData.origin;
-      //   } catch (brandE) {
-      //     console.error(`Error fetching brand:`, brandE);
-      //     // The URL is not built MUST remember to add it in later!
-      //     brandOfProduct.textContent = `404 Error | Please search again at our <a href="Place holder for our URL">home page.</a>`;
-      //   }
-      // }
-      // fetchAllBrands();
+      const title = document.createElement("h3");
+      title.classList.add("card-title");
+      title.textContent = product.name;
+
+      const description = document.createElement("p");
+      description.classList.add("card-description");
+      description.textContent = product.description;
+
+      const price = document.createElement("div");
+      price.classList.add("card-price");
+      price.textContent = product.price;
+
+      cardInfo.appendChild(title);
+      cardInfo.appendChild(description);
+      cardInfo.appendChild(price);
+
+      card.appendChild(img);
+      card.appendChild(cardInfo);
+
+      container.appendChild(card);
     });
   } catch (e) {
     console.error("Error fetching jewelry:", e);
   }
 }
+
+fetchAllJewelry();
 
 // /*--------------{Running Function/Logs}---------------*/
 fetchAllJewelry();
