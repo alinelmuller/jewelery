@@ -245,8 +245,7 @@ const run = async () => {
         stock: 3,
         category: "Ring",
         image: "https://www.sheron.sk/wp-content/uploads/2020/03/0D4A9932.jpg",
-        image:
-          "https://www.sheron.sk/wp-content/uploads/2020/03/0D4A9932.jpg"
+        image: "https://www.sheron.sk/wp-content/uploads/2020/03/0D4A9932.jpg",
         brand: chopardBrand._id,
       },
       {
@@ -280,8 +279,7 @@ const run = async () => {
         stock: 2,
         category: "Watch",
         image: "https://www.sheron.sk/wp-content/uploads/2020/03/0D4A5994.jpg",
-        image:
-          "https://www.sheron.sk/wp-content/uploads/2020/03/0D4A5994.jpg",
+        image: "https://www.sheron.sk/wp-content/uploads/2020/03/0D4A5994.jpg",
         brand: chopardBrand._id,
       },
 
@@ -715,8 +713,6 @@ const run = async () => {
     console.log("added new brand seed");
   } catch (err) {
     console.log("Error found", err);
-  } catch (err) {
-    console.log('Error found', err)
   }
 };
 
