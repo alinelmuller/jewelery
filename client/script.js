@@ -93,4 +93,3 @@ document.addEventListener("DOMContentLoaded", () => {
   setupCarousel("bracelets");
   setupCarousel("rings");
   setupCarousel("necklaces");
-});
