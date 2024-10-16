@@ -3,30 +3,61 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gemoria</title>
+    <title>Gemoria Jewelry</title>
     <link rel="stylesheet" href="styles.css" />
+    <script defer="/script.js"></script>
   </head>
   <body>
-    <header>
-      <h1>Gemoria</h1>
+    <header class="title-container">
+      <!-- This will me our title for page. -->
+      <h1 class="title">Gemoria Jewelry</h1>
     </header>
+
+    <nav>
+      <!-- Our nav here will handle the reading/searching for singular items. Basically a simple search of objectId -->
+      <form>
+        <!-- The input here is where our user will type in a name and the database will search within `/jeweleries/${name}` and pick anything that matches. -->
+        <!-- If such product name does not exist. We do a 404 page stating "404 ERROR | Product does not exist" Then underneath that we do a embedded link. -->
+        <!-- There we just do <a href="Whatever our [homepage/landing page] will be URL"></a> -->
+        <input
+          type="text"
+          value=""
+          placeholder="Search a jewelry product?"
+          id="user-input"
+        />
+        <!-- This is the button that will handle the user's search. Simple event listener of a click to search such item -->
+        <input type="button" value="Search" id="submit" />
+      </form>
+    </nav>
 
     <main>
       <section>
-        <div id="catergory-name">
-          <h1>Bracelets</h1>
+        <!-- Catergory contrainer will hole just the title of the category. -->
+        <!-- The reason I put it into a div is in case we want to add a fancy image behind the text or just add some flare with opacity - Pedro -->
+        <div id="catergory-container">
+          <h1 id="catergory-title">Bracelets</h1>
         </div>
 
-        <div id="product-img">
-          The background for this will have the image inside the container so
-          it's easier when doing css
-          <h2 id="money-tag">$moneyNum</h2>
+        <!-- The product hover here (not sure what other name I would give it to be honest)
+          Will handle a hover eventlistener. Simple but SUPER effect way to had the user look at the items and maybe want to click it so it brings the product page.  
+          Which is another event listener, but for now I can post pone the hover and do the click first.-->
+        <div id="product-hover-container">
+          <!-- The background for this will have the image inside the container so
+          it's easier when doing css -->
+
+          <!-- The script.js will Use DOM to handle the product's price so it's easier to see -->
+          <h2 id="price-of-product">$100</h2>
         </div>
 
+        <!-- This is where we will have a brief summary of our product's individually.
+         The container is a must have if we plan to use flex to have each category be it's own row -->
         <div id="product-container">
-          <details>
-            <summary id="button">See more Button thingy</summary>
+          <!-- details is basically a container but it'll be more for CSS than JS -->
+          <details class="product-details">
+            <!-- Instead of using a trational button. Summary is basically a button without having to add more JS to it. Easy and effective way of making a drop down menu -->
+            <summary id="see-more-button">See more</summary>
             <article>
+              <!-- Will use DOM to chnage both the name and brief description. Probably should use chatGPT for those brief descriptions -->
               <h4 id="product-name">Product name</h4>
               <p id="product-description">Small and Simple Description</p>
             </article>
@@ -36,7 +67,8 @@
     </main>
 
     <footer>
-      <h3 id="totally-real-trademark">&copy2024 Gemoria, Inc</h3>
+      <!-- A totally real trademark that we own :] -->
+      <h3 class="totally-real-trademark">&copy2024 Gemoria Jewelry, Inc</h3>
     </footer>
   </body>
 </html>
