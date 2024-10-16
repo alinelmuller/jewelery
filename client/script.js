@@ -1,16 +1,35 @@
-let carousel = document.querySelector(".carousel");
-let left = document.querySelector(".left");
-let right = document.querySelector(".right");
-let items = document.querySelectorAll(".item"); // Selects all items
+function setupCarousel(sectionId) {
+  const section = document.getElementById(sectionId);
+  const carousel = section.querySelector(".carousel");
+  const items = section.querySelectorAll(".item");
+  const leftButton = section.querySelector(".left");
+  const rightButton = section.querySelector(".right");
 
-(function () {
-  right.addEventListener("click", function () {
-    let itemWidth = items[0].clientWidth; // Assume all items have the same width
-    carousel.scrollLeft += itemWidth;
+  let currentIndex = 0;
+  const totalItems = items.length;
+
+  function updateCarousel() {
+    items.forEach((item, index) => {
+      item.style.transform = `translateX(-${currentIndex * 100}%)`;
+    });
+  }
+
+  leftButton.addEventListener("click", () => {
+    currentIndex = currentIndex === 0 ? totalItems - 1 : currentIndex - 1;
+    updateCarousel();
   });
 
-  left.addEventListener("click", function () {
-    let itemWidth = items[0].clientWidth; // Assume all items have the same width
-    carousel.scrollLeft -= itemWidth;
+  rightButton.addEventListener("click", () => {
+    currentIndex = currentIndex === totalItems - 1 ? 0 : currentIndex + 1;
+    updateCarousel();
   });
-})();
+
+  updateCarousel();
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  setupCarousel("earings");
+  setupCarousel("bracelets");
+  setupCarousel("rings");
+  setupCarousel("necklaces");
+});
