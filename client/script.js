@@ -7,14 +7,13 @@ const ringsPriceTag = document.querySelector(`.ring-price`);
 const ringsDescription = document.querySelector(`.ring-description`);
 const necklacesPriceTag = document.querySelector(`.necklace-price`);
 const necklacesDescription = document.querySelector(`.necklace-description`);
-
 const itemContainer = document.querySelectorAll(`.card`);
 
 // /*--------------------{Functions}---------------------*/
 async function fetchAllJewelry() {
   try {
     const res = await axios.get(`http://localhost:3004/jeweleries`);
-    const apiLibrary = res.data;
+    const products = res.data;
 
     const container = document.querySelector(".container");
 
@@ -93,3 +92,4 @@ document.addEventListener("DOMContentLoaded", () => {
   setupCarousel("bracelets");
   setupCarousel("rings");
   setupCarousel("necklaces");
+});
