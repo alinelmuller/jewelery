@@ -244,8 +244,9 @@ const run = async () => {
         description: "Elegant ring with a purple amethyst centerpiece.",
         stock: 3,
         category: "Ring",
+        image: "https://www.sheron.sk/wp-content/uploads/2020/03/0D4A9932.jpg",
         image:
-          "https://www.sheron.sk/wp-content/uploads/2020/03/0D4A9932.jpg",
+          "https://www.sheron.sk/wp-content/uploads/2020/03/0D4A9932.jpg"
         brand: chopardBrand._id,
       },
       {
@@ -278,6 +279,7 @@ const run = async () => {
         description: "Luxury watch with dancing diamonds on the dial.",
         stock: 2,
         category: "Watch",
+        image: "https://www.sheron.sk/wp-content/uploads/2020/03/0D4A5994.jpg",
         image:
           "https://www.sheron.sk/wp-content/uploads/2020/03/0D4A5994.jpg",
         brand: chopardBrand._id,
@@ -711,7 +713,8 @@ const run = async () => {
 
     let newJewelery = await Jewelery.insertMany(jeweleries);
     console.log("added new brand seed");
-
+  } catch (err) {
+    console.log("Error found", err);
   } catch (err) {
     console.log('Error found', err)
   }
