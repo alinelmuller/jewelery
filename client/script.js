@@ -2,14 +2,11 @@ const containerEarrings = document.querySelector(".earrings-container");
 const containerBracelets = document.querySelector(".bracelets-container");
 const containerRings = document.querySelector(".rings-container");
 const containerNecklaces = document.querySelector(".necklaces-container");
-const container = document.querySelector(".product-container");
 
 async function fetchAllJewelry() {
   try {
     const res = await axios.get(`http://localhost:3004/jeweleries`);
     const products = res.data;
-
-    console.log(products);
 
     const earrings = products.filter(
       (product) => product.category === "Earrings"
@@ -24,11 +21,6 @@ async function fetchAllJewelry() {
     const necklaces = products.filter(
       (product) => product.category === "Necklace"
     );
-
-    console.log("Earrings:", earrings);
-    console.log("Bracelets:", bracelets);
-    console.log("Rings:", rings);
-    console.log("Necklaces:", necklaces);
 
     function createCard(product, targetContainer) {
       const card = document.createElement("div");
@@ -67,7 +59,11 @@ async function fetchAllJewelry() {
     rings.forEach((product) => createCard(product, containerRings));
     necklaces.forEach((product) => createCard(product, containerNecklaces));
 
-    
+    setupCarousel("earrings");
+    setupCarousel("bracelets");
+    setupCarousel("rings");
+    setupCarousel("necklaces");
+
   } catch (e) {
     console.error("Error fetching jewelry:", e);
   }
@@ -84,6 +80,12 @@ function setupCarousel(sectionId) {
   let currentIndex = 0;
   const totalItems = items.length;
 
+  function updateCarousel() {
+    items.forEach((item) => {
+      item.style.transform = `translateX(-${currentIndex * 100}%)`;
+    });
+  }
+
   leftButton.addEventListener("click", () => {
     currentIndex = currentIndex === 0 ? totalItems - 1 : currentIndex - 1;
     updateCarousel();
@@ -94,17 +96,6 @@ function setupCarousel(sectionId) {
     updateCarousel();
   });
 
-  function updateCarousel() {
-    items.forEach((item, index) => {
-      item.style.display = index === currentIndex ? "block" : "none";
-    });
-  }
   updateCarousel();
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  setupCarousel("earrings");
-  setupCarousel("bracelets");
-  setupCarousel("rings");
-  setupCarousel("necklaces");
-});

@@ -81,13 +81,16 @@ body {
 }
 
 .carousel {
-  width: 90vw;
   display: flex;
-  overflow-x: scroll;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  padding-bottom: 10px;
+  overflow: hidden;
+  width: 100%;
 }
+
+.item {
+  flex: 0 0 calc(100% / 4); /* Exibe 3 itens ao mesmo tempo */
+  transition: transform 0.5s ease-in-out;
+}
+
 
 .carousel::-webkit-scrollbar {
   display: none;
@@ -97,10 +100,7 @@ body {
   margin-left: 70px;
 }
 
-.item {
-  flex-basis: 20%;
-  flex-shrink: 0;
-}
+
 
 button.left,
 button.right {
