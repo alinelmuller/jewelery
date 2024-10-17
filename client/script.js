@@ -103,8 +103,8 @@ function setupCarousel(sectionId) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  setupCarousel("earings");
-    setupCarousel("bracelets");
-    setupCarousel("rings");
-    setupCarousel("necklaces");
+  setupCarousel("earrings");
+  setupCarousel("bracelets");
+  setupCarousel("rings");
+  setupCarousel("necklaces");
 });
