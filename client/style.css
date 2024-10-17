@@ -14,7 +14,7 @@ body {
   box-sizing: border-box;
 }
 
-.container {
+.containerTop {
   background-color: #f3f3f3;
   font-size: 14px;
   height: 45px;
@@ -34,7 +34,7 @@ body {
   display: flex;
 }
 
-.container .navbar {
+.containerTop .navbar {
   justify-content: space-between;
 }
 
@@ -42,7 +42,7 @@ body {
   list-style-type: none;
 }
 
-.container .navbar ul li {
+.containerTop .navbar ul li {
   padding: 10px;
   margin: 0 10px;
 }
@@ -298,4 +298,3 @@ footer {
   margin-top: 20px;
   font-size: 12px;
 }
-
