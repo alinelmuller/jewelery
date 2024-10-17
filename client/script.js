@@ -66,16 +66,11 @@ async function fetchAllJewelry() {
     bracelets.forEach((product) => createCard(product, containerBracelets));
     rings.forEach((product) => createCard(product, containerRings));
     necklaces.forEach((product) => createCard(product, containerNecklaces));
-
-    setupCarousel("earings");
-    setupCarousel("bracelets");
-    setupCarousel("rings");
-    setupCarousel("necklaces");
   } catch (e) {
     console.error("Error fetching jewelry:", e);
   }
 }
-fetchAllJewelry;
+fetchAllJewelry();
 
 function setupCarousel(sectionId) {
   const section = document.getElementById(sectionId);
@@ -106,5 +101,8 @@ function setupCarousel(sectionId) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  fetchAllJewelry();
+  setupCarousel("earings");
+  setupCarousel("bracelets");
+  setupCarousel("rings");
+  setupCarousel("necklaces");
 });
