@@ -520,8 +520,7 @@ const run = async () => {
           "A luxury watch featuring a sleek design with a diamond-encrusted bezel.",
         stock: 2,
         category: "Watch",
-        image:
-          "hhttps://m.media-amazon.com/images/I/617xGCTjEtL._AC_UY580_.jpg",
+        image: "https://m.media-amazon.com/images/I/617xGCTjEtL._AC_UY580_.jpg",
         brand: davidYurmanBrand._id,
       },
 
