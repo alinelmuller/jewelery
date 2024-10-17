@@ -66,8 +66,6 @@ async function fetchAllJewelry() {
     bracelets.forEach((product) => createCard(product, containerBracelets));
     rings.forEach((product) => createCard(product, containerRings));
     necklaces.forEach((product) => createCard(product, containerNecklaces));
-
-    
   } catch (e) {
     console.error("Error fetching jewelry:", e);
   }
